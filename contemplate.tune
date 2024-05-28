@@ -8,7 +8,6 @@ d      b B b          | d=p&dec
 d      b b b          |
 d      b b b          |
 d      b b b          |
-d      b b b          |
 D      b b b          | d=pp
 D      B              | d=p
       b               |
@@ -18,5 +17,23 @@ d     b  B b          |
 d     b  b b          |
 d     b  b b          |
 d     b  b b          |
-d     b  b b          |
 D     B               |
+d      b              | d=p,b=mf,m=mf
+BBBBBBBBBBBBBBBBBBBBBB| d=p,b=mf,m=mf
+BBBBBBBBBBBBBBBBBBBBBB|
+BBBBBBBBBBBBBBBBBBBBBB|
+BBBBBBBBBBBBBBBBBBBBBB| d=p&dec
+BBBBBBBBBBBBBBBBBBBBBB|
+BBBBBBBBBBBBBBBBBBBBBB|
+BBBBBBBBBBBBBBBBBBBBBB|
+BBBBBBBBBBBBBBBBBBBBBB| d=pp
+BBBBBBBBBBBBBBBBBBBBBB| d=p
+BBBBBBBBBBBBBBBBBBBBBB|
+BBBBBBBBBBBBBBBBBBBBBB|
+BBBBBBBBBBBBBBBBBBBBBB| d=p&dec
+BBBBBBBBBBBBBBBBBBBBBB|
+BBBBBBBBBBBBBBBBBBBBBB|
+BBBBBBBBBBBBBBBBBBBBBB|
+BBBBBBBBBBBBBBBBBBBBBB|
+BBBBBBBBBBBBBBBBBBBBBB|
+BBBBBBBBBBBBBBBBBBBBBB| d=p,b=mf,m=mf

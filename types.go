@@ -9,7 +9,7 @@ const DYNAMIC_STEP = 1.5
 // an instrument can only play 1 note
 type Instrument struct {
 	articulate func(time int)
-	getSample func(sampleRate, time int) float64 // returns a number from 0-1
+	getSample func(sampleRate, time int) float64 // returns a number from 0-1, centered at 0.5
 	// this function MUST be called with a monotonically increasing location
 }
 
@@ -23,7 +23,7 @@ type Dynamic struct {
 	shouldChange bool // should i hold this dynamic, or crescendo/decrescendo
 	level int // ..., -4 = ppp, -3 = pp, -2 = p, -1 = mp, 0 = mf, 1 = f, 2 = ff, 3 = fff, ...
 	          // this value extends infinitely in both directions
-	multiplier int // how should we scale this value in the final mix?
+	multiplier int // how should we scale this value in the final mix (precalculated)
 }
 
 type Tune struct {

@@ -127,7 +127,7 @@ func MakeWhiteNoise() Instrument {
 	}
 	getSample := func(sampleRate int, time int) float64 {
 		if time - lastArticulation < ARTICULATION_LEN {
-			return 0
+			return 0.5
 		}
 		return rand.Float64()
 	}
@@ -153,7 +153,7 @@ func MakeGenericPeriodic(instrumentList []Instrument,
 	if len(spec) < 2{
 		return nil, fmt.Errorf("invalid periodic spec: %v", spec)
 	}
-	startNote, err := parseNote(spec[1])
+	startNote, err := ParseNote(spec[1])
 	if err != nil {
 		return nil, err
 	}
@@ -196,7 +196,7 @@ func MakePeriodicNote(note int, timbre GenericPeriodic) Instrument {
 	getSample := func(sampleRate, time int) float64 {
 		depth := time % periodLen
 		if time - lastArticulation < ARTICULATION_LEN {
-			return 0
+			return 0.5
 		}
 		return timbre(periodLen, depth)
 	}
@@ -227,7 +227,7 @@ func NoteToFrequency(note int) float64 {
 }
 
 // c4 = 0
-func parseNote(note string) (int, error) {
+func ParseNote(note string) (int, error) {
 	// get base note (not adjusted by octaves)
 	invalidNote := fmt.Errorf("invalid note: %v", note)
 	if len(note) < 2 || note[0] < 'a' || note[0] > 'g' {
