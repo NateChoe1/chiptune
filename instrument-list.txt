@@ -1,0 +1,10 @@
+noise|white
+
+periodic_function|major|start_note|num_notes ; major scale starting from start_note
+periodic_function|minor|start_note|num_notes ; minor scale starting from start_note
+periodic_function|chrom|start_note|num_notes ; chromatic scale starting from start_note
+periodic_function|one|a_single_note
+
+where periodic_function is one of
+    tri
+    saw

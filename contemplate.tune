@@ -1,0 +1,22 @@
+336 ; tempo in bpm of the lowest subdivision. the real tempo is 112, but we have triplet swing
+d,b,m ; "lines" which have the same dynamic shaping
+noise|white,tri|minor|a2|21 ; instrument spec. 1 white noise, 24 notes from the a2 minor scale
+d      b              | d=p,b=mf,m=mf
+       b              |
+         b            |
+d      b B b          | d=p&dec
+d      b b b          |
+d      b b b          |
+d      b b b          |
+d      b b b          |
+D      b b b          | d=pp
+D      B              | d=p
+      b               |
+      b               |
+d        b            | d=p&dec
+d     b  B b          |
+d     b  b b          |
+d     b  b b          |
+d     b  b b          |
+d     b  b b          |
+D     B               |
