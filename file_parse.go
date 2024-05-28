@@ -131,6 +131,8 @@ func ParseInstrument(instrumentList []Instrument, instrument string) ([]Instrume
 		return MakeGenericPeriodic(instrumentList, parts[1:], GenericTriangle)
 	case "saw":
 		return MakeGenericPeriodic(instrumentList, parts[1:], GenericSawtooth)
+	case "square":
+		return MakeGenericPeriodic(instrumentList, parts[1:], GenericSquare)
 	}
 	return nil, fmt.Errorf("invalid instrument: %v", instrument)
 }
@@ -161,6 +163,13 @@ func GenericTriangle(cycleLen, depth int) float64 {
 
 func GenericSawtooth(cycleLen, depth int) float64 {
 	return float64(depth) / float64(cycleLen)
+}
+
+func GenericSquare(cycleLen, depth int) float64 {
+	if depth < cycleLen / 2 {
+		return 0
+	}
+	return 1
 }
 
 func MakeGenericPeriodic(instrumentList []Instrument,

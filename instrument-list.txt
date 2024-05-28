@@ -8,3 +8,4 @@ periodic_function|one|a_single_note
 where periodic_function is one of
     tri
     saw
+    square
