@@ -1,39 +1,295 @@
 336 ; tempo in bpm of the lowest subdivision. the real tempo is 112, but we have triplet swing
 d,b,m ; "lines" which have the same dynamic shaping
-noise|white,tri|minor|a2|21 ; instrument spec. 1 white noise, 24 notes from the a2 minor scale
-d      b              | d=p,b=mf,m=mf
-       b              |
-         b            |
-d      b B b          | d=p&dec
-d      b b b          |
-d      b b b          |
-d      b b b          |
-D      b b b          | d=pp
-D      B              | d=p
-      b               |
-      b               |
-d        b            | d=p&dec
-d     b  B b          |
-d     b  b b          |
-d     b  b b          |
-d     b  b b          |
-D     B               |
-d      b              | d=p,b=mf,m=mf
-BBBBBBBBBBBBBBBBBBBBBB| d=p,b=mf,m=mf
-BBBBBBBBBBBBBBBBBBBBBB|
-BBBBBBBBBBBBBBBBBBBBBB|
-BBBBBBBBBBBBBBBBBBBBBB| d=p&dec
-BBBBBBBBBBBBBBBBBBBBBB|
-BBBBBBBBBBBBBBBBBBBBBB|
-BBBBBBBBBBBBBBBBBBBBBB|
-BBBBBBBBBBBBBBBBBBBBBB| d=pp
-BBBBBBBBBBBBBBBBBBBBBB| d=p
-BBBBBBBBBBBBBBBBBBBBBB|
-BBBBBBBBBBBBBBBBBBBBBB|
-BBBBBBBBBBBBBBBBBBBBBB| d=p&dec
-BBBBBBBBBBBBBBBBBBBBBB|
-BBBBBBBBBBBBBBBBBBBBBB|
-BBBBBBBBBBBBBBBBBBBBBB|
-BBBBBBBBBBBBBBBBBBBBBB|
-BBBBBBBBBBBBBBBBBBBBBB|
-BBBBBBBBBBBBBBBBBBBBBB| d=p,b=mf,m=mf
+noise|white,tri|minor|a2|26 ; instrument spec. 1 white noise, 26 notes from the a2 minor scale
+d      b                   | d=p,b=mf,m=f ; ---
+       b                   |
+         b                 |
+d      b B b               | d=p&dec
+d      b b b               |
+d      b b b               |
+d      b b b               |
+d      b b b               | d=ppp
+D      B                   | d=p
+      b                    |
+      b                    |
+         b                 | d=dec
+d     b  B b               |
+d     b  b b               |
+d     b  b b               |
+d     b  b b               |
+d     b  b b               |
+d     B                    | d=ppp
+       b                   | d=p ; ---
+       b                   |
+         b                 |
+d      b B b               | d=p&dec
+d      b b b               |
+d      b b b               |
+d      b b b               |
+d      b b b               | d=ppp
+D      B                   | d=p
+      b                    |
+      b                    |
+         b                 | d=dec
+d     b  B b               |
+d     b  b b               |
+d     b  b b               |
+d     b  b b               |
+d     b  b b               |
+d     B                    | d=ppp
+       b                   | d=p, ; ---
+       b                   |
+         b                 |
+d      b B b      m        | d=p&dec
+d      b b b      m        |
+d      b b b      m        |
+d      b b b      M        |
+d      b b b      m        | d=ppp
+D      B          m        | d=p
+      b           M        |
+      b           m        |
+         b      m          | d=dec
+d     b  B b    m          |
+d     b  b b    m          |
+d     b  b b    m          |
+d     b  b b     m         |
+d     b  b b     m         |
+d     B          m         | d=ppp
+       b          m        | d=p ; ---
+       b          m        |
+         b        m        |
+d      b B b      m        | d=p&dec
+d      b b b      m        |
+d      b b b      m        |
+d      b b b      m        |
+d      b b b      m        | d=ppp
+D      B          m        | d=p
+      b                    |
+      b                    |
+         b                 | d=dec
+d     b  B b               |
+d     b  B b               |
+d     b  b b               |
+d     b  b b               |
+d     b  b b               |
+d     B                    | d=ppp
+       b                   | d=p ; ---
+       b                   |
+         b                 |
+d      b B b      m        | d=p&dec
+d      b b b      m        |
+d      b b b      m        |
+d      b b b      M        |
+d      b b b      m        | d=ppp
+D      B          m        | d=p
+      b           M        |
+      b           m        |
+         b      m          | d=dec
+d     b  B b    m          |
+d     b  b b    m          |
+d     b  b b    m          |
+d     b  b b     m         |
+d     b  b b     m         |
+d     B          m         | d=ppp
+       b      m            |
+       b      m            |
+         b    m            |
+d      b B b  m            | d=p&dec
+d      b b b  m            |
+d      b b b  m            |
+d      b b b  m            |
+d      b b b  m            | d=ppp
+D      B      m            | d=p
+      b                    |
+      b                    |
+         b                 | d=dec
+d     b  B b               |
+d     b  B b               |
+d     b  b b               |
+d     b  b b               |
+d     b  b b               |
+d     B                    | d=ppp
+       b                   | d=p ; ---
+       b                   |
+         b                 |
+d      b B b      m        | d=p&dec
+d      b b b      m        |
+d      b b b      m        |
+d      b b b        m      |
+d      b b b        m      | d=ppp
+D      B            m      | d=p
+      b              m     |
+      b              m     |
+         b           M     | d=dec
+d     b  B b         m     |
+d     b  b b         m     |
+d     b  b b         m     |
+d     b  b b           m   |
+d     b  b b           m   |
+d     B                m   | d=ppp
+       b                 m | d=p ; ---
+       b                 m |
+         b               m |
+d      b B b             m | d=p&dec
+d      b b b             m |
+d      b b b             m |
+d      b b b             m |
+d      b b b             m | d=ppp
+D      B                 m | d=p
+      b                 m  |
+      b                 m  |
+         b              m  | d=dec
+d     b  B b            m  |
+d     b  b b            m  |
+d     b  b b            m  |
+d     b  b b            m  |
+d     b  b b            m  |
+d     B                 m  | d=ppp
+       b                   | d=p ; ---
+       b                   |
+         b                 |
+d      b B b      m        | d=p&dec
+d      b b b      m        |
+d      b b b      m        |
+d      b b b      M        |
+d      b b b      m        | d=ppp
+D      B          m        | d=p
+      b           M        |
+      b           m        |
+         b      m          | d=dec
+d     b  B b    m          |
+d     b  b b    m          |
+d     b  b b    m          |
+d     b  b b     m         |
+d     b  b b     m         |
+d     B          m         | d=ppp
+       b      m            | d=p ; ---
+       b      m            |
+         b    m            |
+d      b B b  m            | d=p&dec
+d      b b b  m            |
+d      b b b  m            |
+d      b b b  m            |
+d      b b b  m            | d=ppp
+D      B      m            | d=p
+      b                    |
+      b                    |
+         b                 | d=dec
+d     b  B b               |
+d     b  b b               |
+d     b  b b               |
+d     b  b b               |
+d     b  b b               |
+d     B                    | d=ppp
+       b      m            | d=p ; ---
+       b       m           |
+         b    m            |
+d      b B b    m          | d=p&dec
+d      b b b  m            |
+d      b b b   m           |
+d      b b b  m            |
+d      b b b    m          | d=ppp
+D      B          m        | d=p
+      b          m         |
+      b            m m     |
+         b        m m      | d=dec
+d     b  B b     m m       |
+d     b  b b    m m        |
+d     b  b b   m m         |
+d     b  b b  m m          |
+d     b  b b   m m         |
+d     B         m m        | d=ppp
+       b         m m       | d=p ; ---
+       b         m m       |
+         b       m m       |
+d      b B b     m m       | d=p&dec
+d      b b b     m m       |
+d      b b b     m m       |
+d      b b b     m m       |
+d      b b b     m m       | d=ppp
+D      B         m m       | d=p
+      b         m m        |
+      b         m m        |
+         b      m m        | d=dec
+d     b  B b    m m        |
+d     b  b b    m m        |
+d     b  b b    m m        |
+d     b  b b    m m        |
+d     b  b b    m m        |
+d     B         m m        | d=ppp
+       b                   | d=p ; ---
+       b                   |
+         b                 |
+d      b B b    m m        | d=p&dec
+d      b b b     m m       |
+d      b b b      m m      |
+d      b b b       m m     |
+d      b b b      m m      | d=ppp
+D      B         m m       | d=p
+      b         m m        |
+      b        m m         |
+         b    m m          | d=dec
+d     b  B b m m           |
+d     b  b b m m           |
+d     b  b b m m           |
+d     b  b b m m           |
+d     b  b b m m           |
+d     B      m m           | d=ppp
+       b      m            | d=p ; ---
+       b      m            |
+         b    m            |
+d      b B b  m            | d=p&dec
+d      b b b  m            |
+d      b b b  m            |
+d      b b b  m            |
+d      b b b  m            | d=ppp
+D      B      m            | d=p
+      b                    |
+      b                    |
+         b                 | d=dec
+d     b  B b               |
+d     b  b b               |
+d     b  b b               |
+d     b  b b               |
+d     b  b b               |
+d     B                    | d=ppp
+
+; fadeout
+       b                   | d=p&dec,b=dec
+       b                   |
+         b                 |
+d      b B b               |
+d      b b b               |
+d      b b b               |
+d      b b b               |
+d      b b b               |
+D      B                   |
+      b                    |
+      b                    |
+         b                 |
+d     b  B b               |
+d     b  b b               |
+d     b  b b               |
+d     b  b b               |
+d     b  b b               |
+d     B                    |
+       b                   |
+       b                   |
+       b                   |
+         b                 |
+d      b B b               |
+d      b b b               |
+d      b b b               |
+d      b b b               |
+d      b b b               |
+D      B                   |
+      b                    |
+      b                    |
+         b                 |
+d     b  B b               |
+d     b  b b               |
+d     b  b b               |
+d     b  b b               |
+d     b  b b               |
+d     B                    |
+       b                   | d=pppppppppp,b=pppppppppp

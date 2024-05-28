@@ -26,9 +26,7 @@ func main() {
 	encoder := wav.NewEncoder(outFile, SAMPLE_RATE, 16, 1, 1)
 	defer encoder.Close()
 
-	var tuneOut audio.IntBuffer
-	tuneOut.Format = audio.FormatStereo44100
-	tuneOut.SourceBitDepth = 16
+	currLen := 0
 
 	for beat, v := range(tune.tuneData) {
 		newData := make([]int, tune.samplesPerBeat)
@@ -36,20 +34,25 @@ func main() {
 			line := note.line
 			if 'A' <= line && line <= 'Z' {
 				line += 'a' - 'A'
-				note.instrument.articulate(len(tuneOut.Data))
+				note.instrument.articulate(currLen)
 			}
 			dynamic := tune.dynamics[beat][line]
 			for i := 0; i < len(newData); i += 1 {
-				baseVol := note.instrument.getSample(SAMPLE_RATE, len(tuneOut.Data) + i)
+				baseVol :=
+				note.instrument.getSample(SAMPLE_RATE, currLen + i)
 				thisNote := int(baseVol * float64(dynamic.multiplier))
 				newData[i] += thisNote
 			}
 		}
-		tuneOut.Data = append(tuneOut.Data, newData...)
-	}
-
-	err = encoder.Write(&tuneOut)
-	if err != nil {
-		panic(err)
+		currLen += tune.samplesPerBeat
+		wavSegment := audio.IntBuffer {
+			Data: newData,
+			Format: audio.FormatMono44100,
+			SourceBitDepth: 16,
+		}
+		err = encoder.Write(&wavSegment)
+		if err != nil {
+			panic(err)
+		}
 	}
 }

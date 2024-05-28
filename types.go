@@ -1,7 +1,7 @@
 package main
 
 const SAMPLE_RATE = 44100
-const ARTICULATION_LEN = 100
+const ARTICULATION_LEN = 1000
 
 const BASE_DYNAMIC_MULT = 1000
 const DYNAMIC_STEP = 1.5

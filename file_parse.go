@@ -267,11 +267,10 @@ func AddBeat(tune *Tune, instruments []Instrument, line []byte, linenum int) err
 			goto foundSplit
 		}
 	}
-	// we don't have a split, this line is invalid
-	return fmt.Errorf("line %v: no split", linenum)
+	// we ignore empty lines
+	return nil
 
 foundSplit:
-
 	if len(noteData) != len(instruments) {
 		return fmt.Errorf("line %v: invalid instrument count", linenum)
 	}
