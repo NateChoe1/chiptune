@@ -433,7 +433,8 @@ func ParseDynamic(info string, prevDynamic Dynamic) (Dynamic, error) {
 		switch part {
 		// crescendos and decrescendos are implicitly inferred from the
 		// start and stop dynamics
-		case "cresc": case "dec":
+		case "cresc": fallthrough
+		case "dec":
 			ret.shouldChange = true
 			explicitlyShouldChange = true
 			continue

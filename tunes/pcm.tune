@@ -1,5 +1,5 @@
 400
-d,m
+d,m,o
 pcm|./tunes/samples/kick.wav,pcm|./tunes/samples/snare.wav,pcm|./tunes/samples/hat.wav,pcm|./tunes/samples/crash.wav,pcm|./tunes/samples/eb.wav,pcm|./tunes/samples/f.wav,pcm|./tunes/samples/g.wav
        |d=p,m=fff
    D   |
@@ -30,7 +30,7 @@ dd  m  |
 D   m  |
 d D m  |
 D d m  |
-       |
+d      |
        |
        |
        |
@@ -46,10 +46,42 @@ dd   m |
 dD   m |
 Dd   m |
 d D  m |
+  d    |
        |
        |
        |
+D    M |
+d    m |
+d     M|
+d   M  |
+  D m  |
+  d m  |
+ D  m  |
+Dd  m  |
+dd  m  |
+D   m  |
+d D m  |
+D d m  |
+d      |
        |
+       |
+       |
+ D  M  |
+ dD M  |
+Ddd    |
+dDd M  |
+ddD M  |
+Ddd    |
+dDd M  |
+ddD M  |
+Ddd    |
+dDd M  |
+ddD M  |
+d dD   |
+O  d M | o=p&cresc
+O  d m |
+O  d m |
+O  d   | o=mp
 D    M | ; ---
 d    m |
 d     M|
@@ -62,7 +94,7 @@ dd  m  |
 D   m  |
 d D m  |
 D d m  |
-       |
+d      |
        |
        |
        |
@@ -78,11 +110,11 @@ dd   m |
 dD   m |
 Dd   m |
 d D  m |
-  D    |
-D d    |
-d D    |
-d D    |
-D    M | ; ---
+  d    |
+       |
+       |
+       |
+D    M |
 d    m |
 d     M|
 d   M  |
@@ -94,119 +126,23 @@ dd  m  |
 D   m  |
 d D m  |
 D d m  |
+d      |
        |
        |
        |
-       |
-D    M |
-d    m |
-d     M|
-d   M  |
-  D m  |
-  d m  |
- D   M |
-Dd   m |
-dd   m |
-dD   m |
-Dd   m |
-d D  m |
-       |
-       |
-       |
-       |
-D    M | ; ---
-d    m |
-d     M|
-d   M  |
-  D m  |
-  d m  |
- D  m  |
-Dd  m  |
-dd  m  |
-D   m  |
-d D m  |
-D d m  |
-       |
-       |
-       |
-       |
-D    M |
-d    m |
-d     M|
-d   M  |
-  D m  |
-  d m  |
- D   M |
-Dd   m |
-dd   m |
-dD   m |
-Dd   m |
-d D  m |
-  D    |
-D d    |
-d D    |
-d D    |
-D    M | ; ---
-d    m |
-d     M|
-d   M  |
-  D m  |
-  d m  |
- D  m  |
-Dd  m  |
-dd  m  |
-D   m  |
-d D m  |
-D d m  |
-       |
-       |
-       |
-       |
-D    M |
-d    m |
-d     M|
-d   M  |
-  D m  |
-  d m  |
- D   M |
-Dd   m |
-dd   m |
-dD   m |
-Dd   m |
-d D  m |
-       |
-       |
-       |
-       |
-D    M | ; ---
-d    m |
-d     M|
-d   M  |
-  D m  |
-  d m  |
- D  m  |
-Dd  m  |
-dd  m  |
-D   m  |
-d D m  |
-D d m  |
-       |
-       |
-       |
-       |
-D    M |
-d    m |
-d     M|
-d   M  |
-  D m  |
-  d m  |
- D   M |
-Dd   m |
-dd   m |
-dD   m |
-Dd   m |
-d D  m |
-  D    |
-D d    |
-d D    |
-d D    |
+ D  M  |
+ dD M  |
+Ddd    |
+dDd M  |
+ddD M  |
+Ddd    |
+dDd M  |
+ddD M  |
+Ddd    |
+dDd M  |
+ddD M  |
+d dD   |
+O  d M | o=p&cresc
+O  d m |
+O  d m |
+O  d   | o=mp
