@@ -21,9 +21,11 @@ import (
 	"fmt"
 	"math"
 	"bufio"
+	"errors"
 	"strconv"
 	"strings"
 	"math/rand"
+	"github.com/go-audio/wav"
 )
 
 type GenericPeriodic func(cycleLen, depth int) float64
@@ -133,6 +135,11 @@ func ParseInstrument(instrumentList []Instrument, instrument string) ([]Instrume
 		return MakeGenericPeriodic(instrumentList, parts[1:], GenericSawtooth)
 	case "square":
 		return MakeGenericPeriodic(instrumentList, parts[1:], GenericSquare)
+	case "pcm":
+		if len(parts) != 2 {
+			break
+		}
+		return MakePCM(instrumentList, parts[1])
 	}
 	return nil, fmt.Errorf("invalid instrument: %v", instrument)
 }
@@ -144,9 +151,9 @@ func MakeWhiteNoise() Instrument {
 	}
 	getSample := func(sampleRate int, time int) float64 {
 		if time - lastArticulation < ARTICULATION_LEN {
-			return 0.5
+			return 0
 		}
-		return rand.Float64()
+		return rand.Float64() * 2 - 1
 	}
 	return Instrument {
 		articulate: articulate,
@@ -158,18 +165,69 @@ func GenericTriangle(cycleLen, depth int) float64 {
 	if depth > cycleLen / 2 {
 		depth = cycleLen - depth
 	}
-	return float64(depth) / float64(cycleLen) * 2
+	return float64(depth) / float64(cycleLen) * 4 - 1
 }
 
 func GenericSawtooth(cycleLen, depth int) float64 {
-	return float64(depth) / float64(cycleLen)
+	return float64(depth) / float64(cycleLen) * 2 - 1
 }
 
 func GenericSquare(cycleLen, depth int) float64 {
 	if depth < cycleLen / 2 {
-		return 0
+		return -1
 	}
 	return 1
+}
+
+func MakePCM(instrumentList []Instrument, fname string) ([]Instrument, error) {
+	f, err := os.Open(fname)
+	if err != nil {
+		return nil, err
+	}
+	defer f.Close()
+
+	decoder := wav.NewDecoder(f)
+	buff, err := decoder.FullPCMBuffer()
+	if err != nil {
+		return nil, err
+	}
+	if buff.Format.NumChannels != 1 || buff.Format.SampleRate != 44100 {
+		return nil, errors.New("chiptune only supports 44100 mono pcm sounds")
+	}
+
+	floatBuffer := make([]float64, 0)
+	for _, v := range(buff.Data) {
+		normalized := float64(v) * math.Pow(0.5, float64(buff.SourceBitDepth))
+		floatBuffer = append(floatBuffer, normalized * 2)
+	}
+	avgOffset := 0.0
+	for _, v := range(floatBuffer) {
+		avgOffset += math.Abs(v)
+	}
+	avgOffset /= float64(len(floatBuffer))
+	scaleFactor := 0.5 / avgOffset
+	for i := range(floatBuffer) {
+		floatBuffer[i] *= scaleFactor
+	}
+
+	lastArticulation := 0
+	articulate := func(time int) {
+		lastArticulation = time
+	}
+	getSample := func(sampleRate int, time int) float64 {
+		depth := time - lastArticulation
+		if depth >= len(floatBuffer) {
+			return 0
+		}
+		return floatBuffer[depth]
+	}
+
+	newInstrument := Instrument {
+		articulate: articulate,
+		getSample: getSample,
+	}
+	instrumentList = append(instrumentList, newInstrument)
+	return instrumentList, nil
 }
 
 func MakeGenericPeriodic(instrumentList []Instrument,

@@ -3,14 +3,18 @@ package main
 const SAMPLE_RATE = 44100
 const ARTICULATION_LEN = 1000
 
-const BASE_DYNAMIC_MULT = 1000
+const BASE_DYNAMIC_MULT = 2000
 const DYNAMIC_STEP = 1.5
 
 // an instrument can only play 1 note
 type Instrument struct {
 	articulate func(time int)
-	getSample func(sampleRate, time int) float64 // returns a number from 0-1, centered at 0.5
+
+	// NOTE: for notes of around 440hz, the number should be in the range of
+	// [-1,1].
+
 	// this function MUST be called with a monotonically increasing location
+	getSample func(sampleRate, time int) float64 // returns a number centered at 0
 }
 
 type Note struct {
